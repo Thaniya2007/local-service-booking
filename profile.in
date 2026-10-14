@@ -1,0 +1,51 @@
+import profileData from "../data/profileData";
+import ProfileHeader from "./ProfileHeader";
+import ProfileDetails from "./ProfileDetails";
+import About from "./About";
+import Skills from "./Skills";
+import Contact from "./Contact";
+
+function Profile() {
+  return (
+    <div className="profile-card">
+      <ProfileHeader profile={profileData} />
+      <ProfileDetails profile={profileData} />
+      <About description={profileData.about} />
+      <Skills />
+      <Contact
+        email={profileData.email}
+        phone={profileData.phone}
+      />
+    </div>
+  );
+}
+
+export default Profile;
+App
+ └── Profile
+      ├── ProfileHeader
+      │    └── ProfileImage
+      ├── ProfileDetails
+      ├── About
+      ├── Skills
+      │    └── SkillItem (repeated with map)
+      └── Contact
+      onst profileData = {
+  name: "THANIYA S",
+  role: "IT Student ",
+  email: "thaniyas@gmail.com",
+  phone: "+91 9092850037",
+  location: ", Tamil Nadu",
+  about: "I enjoy building responsive web applications.",
+  image: "https://i.pravatar.cc/300?img=12"
+};
+
+export default profileData;
+const skillsData = [
+  { id: 1, name: "HTML", level: "Advanced" },
+  { id: 2, name: "CSS", level: "Advanced" },
+  { id: 3, name: "JavaScript", level: "Intermediate" },
+  { id: 4, name: "React JS", level: "Intermediate" }
+];
+
+export default skillsData;
